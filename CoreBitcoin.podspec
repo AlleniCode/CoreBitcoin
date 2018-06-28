@@ -19,4 +19,8 @@ Pod::Spec.new do |s|
   s.osx.framework = 'AppKit'
   s.dependency 'OpenSSL-Universal', '1.0.1.16'
   s.dependency 'ISO8601DateFormatter'
+  s.pod_target_xcconfig = {
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/Crashlytics',
+    'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
+  }
 end
