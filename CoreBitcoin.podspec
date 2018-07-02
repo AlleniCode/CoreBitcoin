@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
     'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
   }
 
-  s.subspec 'OpenSSL' do |openssl|
+  s.subspec 'OpenSSL-Universal' do |openssl|
     openssl.source_files = 'CoreBitcoin/openssl/**/*.h'
     openssl.public_header_files = 'CoreBitcoin/openssl/**/*.h'
     openssl.ios.preserve_paths      = 'CoreBitcoin/openssl/libcrypto-ios.a', 'CoreBitcoin/openssl/libssl-ios.a'
