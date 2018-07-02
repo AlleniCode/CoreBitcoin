@@ -21,19 +21,5 @@ Pod::Spec.new do |s|
   s.dependency 'ISO8601DateFormatter'
 
   s.static_framework = true
-  
-  s.pod_target_xcconfig = {
-    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/CoreBitcoin',
-    'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
-  }
-
-  s.subspec 'OpenSSL-Universal' do |openssl|
-    openssl.source_files = 'CoreBitcoin/openssl/**/*.h'
-    openssl.public_header_files = 'CoreBitcoin/openssl/**/*.h'
-    openssl.ios.preserve_paths      = 'CoreBitcoin/openssl/libcrypto-ios.a', 'CoreBitcoin/openssl/libssl-ios.a'
-    openssl.ios.vendored_libraries  = 'CoreBitcoin/openssl/libcrypto-ios.a', 'CoreBitcoin/openssl/libssl-ios.a'
-    openssl.libraries = 'ssl', 'crypto'
-    openssl.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/#{s.name}/CoreBitcoin/openssl/**" }
-  end
 
 end
