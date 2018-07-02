@@ -34,5 +34,6 @@ Pod::Spec.new do |s|
     openssl.ios.vendored_libraries  = 'CoreBitcoin/openssl/libcrypto-ios.a', 'CoreBitcoin/openssl/libssl-ios.a'
     openssl.libraries = 'ssl', 'crypto'
     openssl.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/#{s.name}/CoreBitcoin/openssl/**" }
+  end
 
 end
